@@ -1,1 +1,38 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+input {
+    clear: both;
+    padding-top: 10px;
+    display: none;
+  } 
+
+label {
+    font-weight: 700;
+    font-size: 18px;
+    display: inline-block;
+    width: 20%;
+    padding: 1.5em;
+    color: #757575;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+#okreg-1:not(:checked) ~ .okreg-1,
+#okreg-2:not(:checked) ~ .okreg-2,
+#okreg-3:not(:checked) ~ .okreg-3 {
+  display: none;
+}
+
+#okreg-1:checked ~ .okreg-1,
+#okreg-2:checked ~ .okręg-2,
+#okreg-3:checked ~ .okręg-3 {
+  display: block;
+}
+
+#okreg-1:checked + label,
+#okreg-2:checked + label,
+#okreg-3:checked + label {
+  background: darkgray;
+}

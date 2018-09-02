@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Homepage Marcin Layout
+ * Template Name: Kandydaci
  *
  * This template can be used to override the default template and sidebar setup
  *
@@ -50,33 +50,43 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 		array( 'parent' => $cat_id )
 	);
 
+
+	$isFirst = true;
+
+    $i=1;   
+
+
 	foreach ( $child_categories as $child ) {
+
 		// Here I'm showing as a list...
-		echo '<a class="btn btn-secondary">'.$child ->cat_name.'</a>';
+		//first element on list is checked candidates wisible
+		if($i==1) {
+			echo '<input id="'.$child ->slug.'" type="radio" name="tabs" checked="checked">';
+		}
+		else
+		{
+			echo '<input id="'.$child ->slug.'" type="radio" name="tabs" >';
+		}
+			$i++;
+			echo '<label for="'.$child ->slug.'"><span>'.$child ->cat_name.'</span></label>';
 	}
 
-
+	
 	while ($recent_posts_query->have_posts()) {
-
-		
 		$recent_posts_query->the_post();
-
 		if(has_category())
 		$category = get_the_category();
-		{
-			?>	<span>nazwa kategorii</span> <?php echo $category[0]->cat_name;
-		}
-	?>
+			{
+				$category[0]->cat_name;
+			}
+		?>
 
 
-
-		<div class='post <?php echo $category[0]->cat_name; ?>'>
+		<div class='post <?php echo $category[0]->slug; ?>'>
 			<!-- <p class="date"><?php the_date(); ?></p> -->
 			<!-- <a href="<?php echo site_url();?>/blog"> -->
 				<h3><?php the_title(); ?></h3>
-			
-			
-		
+
 			<div><?php the_post_thumbnail('thumbnail') ?></div>
 			</a>
 
