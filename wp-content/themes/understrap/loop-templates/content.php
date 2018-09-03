@@ -30,6 +30,7 @@
 
 		<?php
 		the_excerpt();
+		// the_content();
 		?>
 
 		<?php
