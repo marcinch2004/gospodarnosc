@@ -59,7 +59,7 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 	foreach ( $child_categories as $child ) {
 
 		// Here I'm showing as a list...
-		//first element on list is checked candidates wisible
+		//first element on list is checked candidates
 		if($i==1) {
 			echo '<input id="'.$child ->slug.'" type="radio" name="tabs" checked="checked">';
 		}
@@ -71,7 +71,6 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 			echo '<label for="'.$child ->slug.'"><span>'.$child ->cat_name.'</span></label>';
 	}
 
-	
 	while ($recent_posts_query->have_posts()) {
 		$recent_posts_query->the_post();
 		if(has_category())
