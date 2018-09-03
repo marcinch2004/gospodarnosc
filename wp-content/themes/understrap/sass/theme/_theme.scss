@@ -21,18 +21,21 @@ label {
 
 #okreg-1:not(:checked) ~ .okreg-1,
 #okreg-2:not(:checked) ~ .okreg-2,
-#okreg-3:not(:checked) ~ .okreg-3 {
+#okreg-3:not(:checked) ~ .okreg-3,
+#okreg-4:not(:checked) ~ .okreg-4 {
   display: none;
 }
 
 #okreg-1:checked ~ .okreg-1,
 #okreg-2:checked ~ .okręg-2,
-#okreg-3:checked ~ .okręg-3 {
+#okreg-3:checked ~ .okręg-3,
+#okreg-4:checked ~ .okręg-4 {
   display: block;
 }
 
 #okreg-1:checked + label,
 #okreg-2:checked + label,
-#okreg-3:checked + label {
+#okreg-3:checked + label,
+#okreg-4:checked + label {
   background: darkgray;
 }

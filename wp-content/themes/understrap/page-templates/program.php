@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Kandydaci
+ * Template Name: Program
  *
  * This template can be used to override the default template and sidebar setup
  *
@@ -41,43 +41,9 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 <?php
 
-$recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'people'));
-
-//Get list of people subcategory names
-	$cat = get_category( get_query_var( 'cat' ) );
-	$cat_id = 4;
-	$child_categories=get_categories(
-		array( 'parent' => $cat_id )
-	);
-
-
-	$isFirst = true;
-
-    $i=1;   
-
-
-	foreach ( $child_categories as $child ) {
-
-		// Here I'm showing as a list...
-		//first element on list is checked candidates
-		if($i==1) {
-			echo '<input id="'.$child ->slug.'" type="radio" name="tabs" checked="checked">';
-		}
-		else
-		{
-			echo '<input id="'.$child ->slug.'" type="radio" name="tabs" >';
-		}
-			$i++;
-			echo '<label for="'.$child ->slug.'"><span>'.$child ->cat_name.'</span></label>';
-	}
-
+$recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'program wyborczy'));
 	while ($recent_posts_query->have_posts()) {
 		$recent_posts_query->the_post();
-		if(has_category())
-		$category = get_the_category();
-			{
-				$category[0]->cat_name;
-			}
 		?>
 
 
@@ -90,9 +56,6 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 			</a>
 
 		<?php
-			// global $more;
-			// $more = 0;
-			// the_excerpt();
 			the_content();
 		?>
 		
@@ -105,7 +68,7 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 ?>
 
 
-<a class="btn btn-secondary" href="<?php echo esc_url( get_permalink(81) ); ?>">Zobacz nasz program</a>
+
 
 
 <!-- <?php $the_query = new WP_Query( 'posts_per_page=5' );
