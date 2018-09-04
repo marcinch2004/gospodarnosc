@@ -55,45 +55,18 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 			<div><?php the_post_thumbnail('thumbnail') ?></div>
 			</a>
 
-		<?php
-			the_content();
-		?>
+		<?php the_content(); ?>
 		
 		</div>
-		<!-- clearing WP fucking float -->
-		<div style="clear: both;"></div>
 		
-		<?php
-		}
+		<?php 
+		} 
+	endwhile; // end of the loop. 
+	wp_reset_postdata();
 ?>
 
-
-
-
-
-<!-- <?php $the_query = new WP_Query( 'posts_per_page=5' );
- 	while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-	<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-
-<?php the_excerpt(__('(more…)'));
- 
-
-endwhile;
-wp_reset_postdata();
-?> -->
-
-
-
-
-
-				<?php endwhile; // end of the loop. ?>
-
-
-
-
-
-
 			</main><!-- #main -->
+			
 
 		<!-- Do the right sidebar check -->
 		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
