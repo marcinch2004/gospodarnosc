@@ -50,7 +50,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 <!-- display news -->
     <div class='col-md-8 <?php echo $category[0]->slug; ?>'>
         <h2>Wiadomości</h2>
+
         <!-- query news -->
+
         <?php
             $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'news'));
                 while ($recent_posts_query->have_posts()) {
@@ -70,14 +72,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     <div class='col-md-4 <?php echo $category[0]->slug; ?>'>
         <h2>Porady</h2>
+
         <!-- querry porady -->
+
         <?php
             $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'porady'));
                 while ($recent_posts_query->have_posts()) {
                     $recent_posts_query->the_post(); ?>
 
                     <h3><?php the_title(); ?></h3>
-                    <?php the_content(); 
+                    <?php the_content(); ?>
+                <?php
                 }
         ?>
 
