@@ -75,17 +75,42 @@ $container = get_theme_mod( 'understrap_container_type' );
 
         <!-- querry porady -->
 
-        <?php
-            $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'porady'));
-                while ($recent_posts_query->have_posts()) {
-                    $recent_posts_query->the_post(); ?>
 
-                    <h3><?php the_title(); ?></h3>
-                    <?php the_content(); ?>
-                <?php
-                }
+
+        <?php
+            $linki = array (
+                'http://localhost/gospodarni/jak-glosowac/',
+                'http://localhost/gospodarni/kandydaci/',
+                'http://localhost/gospodarni/program/'
+            );
+            // echo '<span>udało się:'. $linki[0] . '</span>' ;
         ?>
 
+
+        <?php
+            $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'porady'));
+                $count = -1;
+                while ($recent_posts_query->have_posts()) {
+                    $count++; 
+                    $recent_posts_query->the_post(); ?>
+
+                
+                    <?php echo $count ?>
+                <a href=" <?php echo  $linki[$count]  ; ?> ">
+                
+                    <h3><?php the_title(); ?></h3>
+                    <?php the_content(); ?>
+
+                </a>
+
+
+
+                </a>
+                
+                <?php
+                }                
+
+        ?>
 
     </div>
 
