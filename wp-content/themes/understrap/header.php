@@ -43,7 +43,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<?php if ( is_front_page() && is_home() ) : ?>
 
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>xxx</h1>
 
 						<?php else : ?>
 
@@ -60,6 +60,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
+
+
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(
 					array(
@@ -74,9 +76,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				); ?>
 			<?php if ( 'container' == $container ) : ?>
-			</div><!-- .container -->
-			<?php endif; ?>
-
-		</nav><!-- .site-navigation -->
+		</div><!-- .container -->
+		<?php endif; ?>
+		
+	</nav><!-- .site-navigation -->
+	
+	<!-- homepage image -->
+	<?php if ( is_front_page() ) : ?>
+	
+		<figure>
+			<h1>Rumia gotowa na zmiany</h1>
+		</figure>
+	
+	<?php else : ?>
+	
+	<?php endif; ?>
 
 	</div><!-- #wrapper-navbar end -->

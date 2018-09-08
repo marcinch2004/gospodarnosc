@@ -35,8 +35,7 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 		$recent_posts_query->the_post();
 		?>
 
-
-		<div class='post <?php echo $category[0]->slug; ?>'>
+		<div class='post <?php echo $category[0]->slug; ?> col-md-8 col-md-offset-2'>
 			<!-- <p class="date"><?php the_date(); ?></p> -->
 			<!-- <a href="<?php echo site_url();?>/blog"> -->
 				<h3><?php the_title(); ?>xxx</h3>

@@ -39,3 +39,28 @@ label {
 #okreg-4:checked + label {
   background: darkgray;
 }
+
+
+/* header */
+#wrapper-navbar {
+  .navbar {
+    height: $header-height;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+  }
+  figure {
+    width: 100%;
+    height: calc(100vh - #{$header-height});
+    margin-top: $header-height;
+    background-image:url("../uploads/2018/09/homepage-image.jpg");
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+  }
+}
+
+#page-wrapper {
+  margin-top: $header-height;
+}

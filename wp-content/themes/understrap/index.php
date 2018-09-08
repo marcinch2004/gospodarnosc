@@ -20,7 +20,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 	<?php get_template_part( 'global-templates/hero' ); ?>
 <?php endif; ?>
 
-<div class="wrapper" id="index-wrapper">
+<div class="wrapper" id="page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
@@ -44,8 +44,12 @@ $container   = get_theme_mod( 'understrap_container_type' );
 				$news_posts_query->the_post();
 				?>
 
-				<h3><?php the_title(); ?></h3>
-				<?php the_content(); ?>
+				<div class="col-md-8 col-md-offset-2">
+
+					<h3><?php the_title(); ?></h3>
+					<?php the_content(); ?>
+
+				</div>
 				
 				<?php 
 			} 

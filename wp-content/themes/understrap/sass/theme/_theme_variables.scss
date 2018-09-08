@@ -1,9 +1,54 @@
-// Use this file to overwrite the basic Bootstrap variables and add your own variables
-// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder. 
-// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+// Use this file to overwrite the basic Bootstrap iables and add your own iables
+// To overwrite a Bootstrap iable you don´t have to touch the Bootstrap folder. 
+// Just copy a iable from src/sass/bootstrap4/_iables.scss, paste it here and edit the value.
 
 
-$primary: #6f31cd; // Thats a sample how you could change a BootStrap variable.
+$primary: #6f31cd; // Thats a sample how you could change a BootStrap iable.
+
+
+/*FONTS*/
+
+$font-family-sans-serif: 'Open Sans', sans-serif;
+
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+// stylelint-enable value-keyword-case
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5 !default;
+
+// $h1-font-size:                $font-size-base * 2.5 !default;
+// $h2-font-size:                $font-size-base * 2 !default;
+// $h3-font-size:                $font-size-base * 1.75 !default;
+// $h4-font-size:                $font-size-base * 1.5 !default;
+// $h5-font-size:                $font-size-base * 1.25 !default;
+// $h6-font-size:                $font-size-base !default;
+
+
+$text-scale-ratio: 1.2;
+
+/* type scale */
+$h1-font-size:   $font-size-base * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
+$h2-font-size:   $font-size-base * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
+$h3-font-size:   $font-size-base * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
+$h4-font-size:   $font-size-base * $text-scale-ratio * $text-scale-ratio;
+$h5-font-size:   $font-size-base * $text-scale-ratio;
+$h6-font-size:   $font-size-base / $text-scale-ratio;
+
+
+
+/*WIDTHS*/
 
 $container-max-widths: (
   sm: 540px,
@@ -11,3 +56,5 @@ $container-max-widths: (
   lg: 960px,
   xl: 1024px
 ) !default;
+
+$header-height: 55px;

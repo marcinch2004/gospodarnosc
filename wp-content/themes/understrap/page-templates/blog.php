@@ -13,7 +13,7 @@ if (have_posts()) :
 <main  class="clearfix">
 
 
-	<?php the_post_thumbnail('full'); ?>
+	<?php the_post_thumbnail('full'); ?>xxx
 	<article>
 
 	    	<?php wp_nav_menu(); ?>
