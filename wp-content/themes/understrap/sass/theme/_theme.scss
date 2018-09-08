@@ -43,14 +43,40 @@ label {
 
 /* header */
 #wrapper-navbar {
+  .navbar-brand {
+    color: $primary;
+    svg {
+      height: 35px;
+      width: auto;
+      }
+  }
   .navbar {
     height: $header-height;
     position: fixed;
     width: 100%;
     z-index: 10;
     top: 0;
+    background-color: #f8f9f9;
+    box-shadow: 0 2px 4px 0 rgba(50,50,50,.06);
+    border-bottom: 1px solid #eee;
+    .nav-link {
+      color: $body-color;
+      font-weight: $font-weight-bold;
+      &:hover {
+        color: $gray-500;
+      }
+    }
   }
+  .active {
+    > .nav-link {
+      color: $gray-500;
+    }
+  }
+
   figure {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
     width: 100%;
     height: calc(100vh - #{$header-height});
     margin-top: $header-height;
@@ -58,6 +84,21 @@ label {
     background-size: cover;
     background-position:center center;
     background-repeat: no-repeat;
+    > section {
+      margin-right: 7vw;
+      width: 45vw;
+      margin-top: 7%;
+      h1 {
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 4rem;
+        color: #ff0000;
+      }
+      > svg {
+        width: auto;
+        height: 4.5vw;
+      }
+    }
   }
 }
 
