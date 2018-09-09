@@ -1,5 +1,18 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
+h2.section_title {
+  color: #02027b;
+  font-size: 1.2rem;
+  line-height: 2;
+  font-weight: 700;
+  border-bottom: 1px solid #02027b73;
+  margin-bottom: 2rem;
+}
+
+.row {
+  margin-bottom: 3rem;
+}
+
 input {
     clear: both;
     padding-top: 10px;
@@ -56,9 +69,10 @@ label {
     width: 100%;
     z-index: 10;
     top: 0;
-    background-color: #f8f9f9;
-    box-shadow: 0 2px 4px 0 rgba(50,50,50,.06);
-    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    // background-color: #f8f9f9;
+    // box-shadow: 0 2px 4px 0 rgba(50,50,50,.06);
+    border-bottom: 1px solid #dddddd;
     .nav-link {
       color: $body-color;
       font-weight: $font-weight-bold;
@@ -104,4 +118,17 @@ label {
 
 #page-wrapper {
   margin-top: $header-height;
+}
+
+/*homepage styles*/
+
+.porady {
+  a {
+    display: block;
+    padding: 1rem;
+    border: 1px solid #02027b;
+    color: inherit;
+    margin-bottom: 2rem;
+    text-decoration: none;
+  }
 }

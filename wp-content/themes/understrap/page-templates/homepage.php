@@ -23,7 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 <!-- display program posutlat posts -->
- <h2>Nasza wizja Rumi</h2>
+ <h2 class="section_title">Nasza wizja Rumi</h2>
 
     <div class="row">
     <?php
@@ -49,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <!-- display news -->
     <div class='col-md-8 <?php echo $category[0]->slug; ?>'>
-        <h2>Wiadomości</h2>
+        <h2 class="section_title">Wiadomości</h2>
 
         <!-- query news -->
 
@@ -62,16 +62,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 			{
 				$category[0]->cat_name;
 			} ?>
-                    <?php echo $category[0]->slug; ?>
+                    <!-- <?php echo $category[0]->slug; ?> -->
                     <h3><?php the_title(); ?></h3>
+                    <?php the_date(); ?>
                     <?php the_post_thumbnail('large') ?>
                     <?php the_excerpt(); 
                 }
         ?>
     </div>
 
-    <div class='col-md-4 <?php echo $category[0]->slug; ?>'>
-        <h2>Porady</h2>
+    <div class='col-md-4 porady'>
+        <h2 class="section_title">Porady</h2>
 
         <!-- querry porady -->
 
@@ -94,8 +95,10 @@ $container = get_theme_mod( 'understrap_container_type' );
                     $count++; 
                     $recent_posts_query->the_post(); ?>
 
-                
-                    <?php echo $count ?>
+                <!-- display number of news -->
+                <!-- <?php echo $count ?> -->
+
+
                 <a href=" <?php echo  $linki[$count]  ; ?> ">
                 
                     <h3><?php the_title(); ?></h3>
