@@ -55,18 +55,23 @@ $container = get_theme_mod( 'understrap_container_type' );
 
         <?php
             $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'news'));
+            $count = -1;
                 while ($recent_posts_query->have_posts()) {
+                    $count++; 
                     $recent_posts_query->the_post();
 		if(has_category())
 		$category = get_the_category();
 			{
 				$category[0]->cat_name;
-			} ?>
-                    <!-- <?php echo $category[0]->slug; ?> -->
+            } ?>
+                     <?php echo $count ?>
+                    <?php echo $category[0]->slug; ?>
                     <h3><?php the_title(); ?></h3>
                     <small><i><?php the_date(); ?></i></small>
                     <?php the_post_thumbnail('large') ?>
-                    <?php the_excerpt(); 
+                    <?php the_excerpt(); ?>
+                    <span>czytaj więcej</span>
+                    <?php
                 }
         ?>
     </div>
@@ -100,8 +105,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
                 <a href=" <?php echo  $linki[$count]  ; ?> ">
-                
-                    <h3><?php the_title(); ?></h3>
+                    <figure></figure>
+                    <h4><?php the_title(); ?></h4>
                     <?php the_content(); ?>
 
                 </a>
