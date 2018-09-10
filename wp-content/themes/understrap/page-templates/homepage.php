@@ -64,7 +64,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			} ?>
                     <!-- <?php echo $category[0]->slug; ?> -->
                     <h3><?php the_title(); ?></h3>
-                    <?php the_date(); ?>
+                    <small><i><?php the_date(); ?></i></small>
                     <?php the_post_thumbnail('large') ?>
                     <?php the_excerpt(); 
                 }

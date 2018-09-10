@@ -2,15 +2,21 @@
 
 h2.section_title {
   color: #02027b;
-  font-size: 1.2rem;
+  opacity: .9;
+  font-size: 1rem;
+  text-transform: uppercase;
   line-height: 2;
   font-weight: 700;
-  border-bottom: 1px solid #02027b73;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .row {
   margin-bottom: 3rem;
+}
+
+img {
+  margin: 0.75rem 0;
 }
 
 input {
