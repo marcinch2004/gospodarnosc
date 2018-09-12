@@ -11,51 +11,54 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper" id="full-width-page-wrapper">
+<div class="top wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+    <div class="<?php echo esc_attr( $container ); ?>" id="content">
 
-		<div class="row">
+        <!-- display program posutlat posts -->
+        <h2 class="section_title">Nasza wizja Rumi</h2>
 
-			<div class="col-md-12 content-area" id="primary">
+        <div class="row">
+            <?php
+            $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'postulat'));
+                while ($recent_posts_query->have_posts()) {
+                    $recent_posts_query->the_post();
+            ?>
 
-				<main class="site-main" id="main" role="main">
+            <div class='col-md-4 <?php echo $category[0]->slug; ?>'>
+                <h3><?php the_title(); ?></h3>
+                <?php the_post_thumbnail('thumbnail') ?>
+                <?php the_excerpt(); ?>
+            </div>
+
+            <?php
+            }
+                ?>
+        </div> 
+    </div>
+</div>
 
 
-<!-- display program posutlat posts -->
- <h2 class="section_title">Nasza wizja Rumi</h2>
+
+<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
     <div class="row">
-    <?php
-    $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'postulat'));
-        while ($recent_posts_query->have_posts()) {
-            $recent_posts_query->the_post();
-            ?>
 
-        <div class='col-md-4 <?php echo $category[0]->slug; ?>'>
-            <h3><?php the_title(); ?></h3>
-            <?php the_post_thumbnail('thumbnail') ?>
-            <?php the_excerpt(); ?>
-        </div>
+        <div class="col-md-12 content-area" id="primary">
 
-        <?php
-        }
-            ?>
-    </div>
-
-
+            <main class="site-main" id="main" role="main">
 
 <div class="row">
 
 <!-- display news -->
-    <div class='col-md-8 <?php echo $category[0]->slug; ?>'>
+    <div class='news col-md-8 <?php echo $category[0]->slug; ?>'>
         <h2 class="section_title">Wiadomości</h2>
 
         <!-- query news -->
 
         <?php
             $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'news'));
-            $count = -1;
+            $count = 0;
                 while ($recent_posts_query->have_posts()) {
                     $count++; 
                     $recent_posts_query->the_post();
@@ -64,15 +67,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 			{
 				$category[0]->cat_name;
             } ?>
-                     <?php echo $count ?>
-                    <?php echo $category[0]->slug; ?>
+                <div class="news__container">
+                    <!-- <?php echo $category[0]->slug; ?> -->
                     <h3><?php the_title(); ?></h3>
-                    <small><i><?php the_date(); ?></i></small>
+                    <small><?php the_date(); ?></small>
                     <?php the_post_thumbnail('large') ?>
                     <?php the_excerpt(); ?>
-                    <span>czytaj więcej</span>
-                    <?php
-                }
+                    <a class="btn btn-secondary understrap-read-more-link show" href="news/#news-<?php echo $count ?>">czytaj więcej <?php echo $count ?></a>
+                </div>
+            <?php
+            }
         ?>
     </div>
 
@@ -108,13 +112,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <figure></figure>
                     <h4><?php the_title(); ?></h4>
                     <?php the_content(); ?>
-
                 </a>
 
-
-
-                </a>
-                
+               
                 <?php
                 }                
 

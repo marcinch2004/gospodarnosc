@@ -14,8 +14,14 @@ h2.section_title {
   letter-spacing: 1px;
 }
 
-.row {
+.top.wrapper {
+  background: #f1f1f1;
   margin-bottom: 3rem;
+}
+
+.post_content {
+
+  padding: 1.5rem 1.5rem 1rem;
 }
 
 img {
@@ -98,8 +104,9 @@ label {
 
   figure {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
     width: 100%;
     height: calc(100vh - #{$header-height});
     margin-top: $header-height;
@@ -107,6 +114,7 @@ label {
     background-size: cover;
     background-position:center center;
     background-repeat: no-repeat;
+    margin-bottom: 0;
     > section {
       margin-right: 7vw;
       width: 45vw;
@@ -122,6 +130,11 @@ label {
         height: 4.5vw;
       }
     }
+    > a {
+      align-self: center;
+      color: white;
+      margin-bottom: 2rem;
+    }
   }
 }
 
@@ -131,46 +144,70 @@ label {
 
 /*homepage styles*/
 
-.porady {
-  a {
-    display: block;
-    color: inherit;
-    margin: 2rem 0;
-    text-decoration: none;
-    figure {
-      width: 64px;
-      height: 64px;
-      background: white;
-      background-image:url("../uploads/2018/09/porady-ikony.svg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      margin: 0 0 1rem 1rem;
+.home {
+  .porady {
+    a {
+      display: block;
+      color: inherit;
+      margin: 0;
+      text-decoration: none;
+      padding: 1rem;
       transition: all 0.25s ease-in-out;
+      &:hover {
+        background: #f1f1f1;
+      }
       h4 {
         transition: inherit;
+        color: black;
+        font-weight: 400;
       }
-    }
-    &:nth-of-type(1) {
-      figure {
-        background-position: center;
-      }
-    }
-    &:nth-of-type(2) {
-      figure {
-        background-position: right;
-      }
-    }
-    &:nth-of-type(3) {
-      figure {
-        background-position: left;
-      }
-    }
-    &:hover {
-      h4 {
-        text-decoration: underline;
+      p {
+        font-weight: 700;
+        color: #023f7b;
+        margin-bottom: 0;
       }
       figure {
-        transform: translate(0, 5px);
+        width: 80px;
+        height: 80px;
+        background: white;
+        background-image:url("../uploads/2018/09/porady-ikony.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0 0 1rem;
+        transition: all 0.25s ease-in-out;
+      }
+      &:nth-of-type(1) {
+        figure {
+          background-position: center;
+        }
+      }
+      &:nth-of-type(2) {
+        figure {
+          background-position: right;
+        }
+      }
+      &:nth-of-type(3) {
+        figure {
+          background-position: left;
+        }
+      }
+      &:hover {
+        figure {
+          transform: translate(0, 5px);
+          background-color: #f1f1f1;
+        }
+      }
+    }
+  }
+
+  .news {
+    .news__container {
+      margin-bottom: 3rem;
+      .understrap-read-more-link {
+        display: none;
+      }
+      .show.understrap-read-more-link {
+        display: inline-block;
       }
     }
   }

@@ -38,14 +38,17 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 //paggination wasn't working, had add line below to get it fixed
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-	$news_posts_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 2, 'category_name' => 'news', 'paged' => $paged));
+	$news_posts_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 3, 'category_name' => 'news', 'paged' => $paged));
+	$count = 0;
 		if ( $news_posts_query->have_posts() ) {
 			while ($news_posts_query->have_posts()) {
+				$count++; 
 				$news_posts_query->the_post();
 				?>
 
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-8 col-md-offset-2 news">
 
+					<p id="news-<?php echo $count ?>"><?php echo $count ?></p>
 					<h3><?php the_title(); ?></h3>
 					<?php the_content(); ?>
 
