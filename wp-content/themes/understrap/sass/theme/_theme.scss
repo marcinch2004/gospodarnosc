@@ -19,7 +19,7 @@ h5 {
 }
 
 .top.wrapper {
-  background: #f1f1f1;
+  background: white;
   margin-bottom: 3rem;
 }
 
@@ -93,7 +93,8 @@ label {
     border-bottom: 1px solid #dddddd;
     .nav-link {
       color: $body-color;
-      font-weight: $font-weight-bold;
+      font-weight: 600;
+
       &:hover {
         color: $gray-500;
       }
@@ -136,7 +137,12 @@ label {
     > a {
       align-self: center;
       color: white;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #9b9a9a;
+      padding: 0.5rem 0.3rem;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
     }
   }
 }
@@ -148,37 +154,43 @@ label {
 /*homepage styles*/
 
 .home {
+  background: #ebeced;
   .porady {
     a {
       display: block;
       color: inherit;
       margin: 0;
       text-decoration: none;
-      padding: 1rem;
+      padding: 0.7rem 1.5rem 1.5rem;
       transition: all 0.25s ease-in-out;
+      background: #ffffff;
+      margin-bottom: 1rem;
+      // border-top: 4px solid #023f7b;
       &:hover {
-        background: #f1f1f1;
+        transform: translate(0, -5px);
       }
       h4 {
         transition: inherit;
-        color: black;
+        color: #212529;
         font-weight: 400;
+        text-transform: none;
       }
       p {
-        font-weight: 700;
+        font-weight: 400;
         color: #023f7b;
         margin-bottom: 0;
+        font-size: 0.9rem;
       }
-      figure {
-        width: 80px;
-        height: 80px;
-        background: white;
-        background-image:url("../uploads/2018/09/porady-ikony.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin: 0 0 1rem;
-        transition: all 0.25s ease-in-out;
-      }
+      // figure {
+      //   width: 80px;
+      //   height: 80px;
+      //   background: white;
+      //   background-image:url("../uploads/2018/09/porady-ikony.svg");
+      //   background-size: cover;
+      //   background-repeat: no-repeat;
+      //   margin: 0 0 1rem;
+      //   transition: all 0.25s ease-in-out;
+      // }
       &:nth-of-type(1) {
         figure {
           background-position: center;
@@ -223,13 +235,17 @@ label {
   position: absolute;
   width: 100%;
   height: 7rem;
-  background-color: #023f7b;
+  // background-color: #023f7b;
   top: 55px;
   // background-image: url(../uploads/2018/09/homepage-image.jpg);
   // background-size: cover;
   // background-position: center 48%;
   // background-repeat: no-repeat;
   // background-blend-mode: multiply;
+  background: #023f7b; /* Old browsers */
+  background: -moz-linear-gradient(top, #023f7b 0%, #0359ad 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #023f7b 0%,#0359ad 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #023f7b 0%,#0359ad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .entry-header {
