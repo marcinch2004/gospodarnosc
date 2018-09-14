@@ -16,7 +16,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     <div class="<?php echo esc_attr( $container ); ?>" id="content">
 
         <!-- display program posutlat posts -->
-        <h2 class="section_title">Nasza wizja Rumi</h2>
+        <h5>Nasza wizja Rumi</h5>
 
         <div class="row">
             <?php
@@ -52,7 +52,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <!-- display news -->
     <div class='news col-md-8 <?php echo $category[0]->slug; ?>'>
-        <h2 class="section_title">Wiadomości</h2>
+        <h5>Wiadomości</h5>
 
         <!-- query news -->
 
@@ -81,7 +81,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     </div>
 
     <div class='col-md-4 porady'>
-        <h2 class="section_title">Porady</h2>
+        <h5>Porady</h5>
 
         <!-- querry porady -->
 
