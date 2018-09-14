@@ -73,7 +73,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <small><?php the_date(); ?></small>
                     <?php the_post_thumbnail('large') ?>
                     <?php the_excerpt(); ?>
-                    <a class="btn btn-secondary understrap-read-more-link show" href="news/#news-<?php echo $count ?>">czytaj więcej <?php echo $count ?></a>
+                    <a class="btn btn-secondary understrap-read-more-link show page-scroll" href="news/#news-<?php echo $count ?>">czytaj więcej <?php echo $count ?></a>
                 </div>
             <?php
             }
