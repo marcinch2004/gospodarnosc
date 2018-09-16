@@ -41,28 +41,33 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 <?php
 
-$recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'program wyborczy'));
-	while ($recent_posts_query->have_posts()) {
-		$recent_posts_query->the_post();
-		?>
+$news_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'program wyborczy'));
+	$count = 0;
+	if ( $news_posts_query->have_posts() ) {
+		while ($news_posts_query->have_posts()) {
+			$count++; 
+			$news_posts_query->the_post();
+			?>
+		
 
+		<span id="program-<?php echo $count ?>" class="spacer"></span>
 		<div class='post <?php echo $category[0]->slug; ?> col-md-8 col-md-offset-2'>
-			<!-- <p class="date"><?php the_date(); ?></p> -->
-			<!-- <a href="<?php echo site_url();?>/blog"> -->
+
 				<h3><?php the_title(); ?></h3>
+				<div><?php the_post_thumbnail('thumbnail') ?></div>
 
-			<div><?php the_post_thumbnail('thumbnail') ?></div>
-			</a>
-
-		<?php the_content(); ?>
+				<?php the_content(); ?>
 		
 		</div>
-		
-		<?php 
-		} 
-	endwhile; // end of the loop. 
-	wp_reset_postdata();
+
+						<?php 
+			} 
+		wp_reset_postdata();
+		wp_reset_query();
+		}
 ?>
+		
+		<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
 			

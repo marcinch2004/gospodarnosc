@@ -21,7 +21,9 @@ $container = get_theme_mod( 'understrap_container_type' );
         <div class="row">
             <?php
             $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'postulat'));
+            $count = 0;
                 while ($recent_posts_query->have_posts()) {
+                    $count++; 
                     $recent_posts_query->the_post();
             ?>
 
@@ -29,6 +31,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <h3><?php the_title(); ?></h3>
                 <?php the_post_thumbnail('thumbnail') ?>
                 <?php the_excerpt(); ?>
+                <a class="btn btn-secondary understrap-read-more-link show page-scroll" href="program/#program-<?php echo $count ?>">czytaj więcej <?php echo $count ?></a>
             </div>
 
             <?php
