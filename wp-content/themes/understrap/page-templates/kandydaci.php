@@ -38,7 +38,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 <!-- <?php wp_list_categories( ); ?>	 -->
 
 					
-					<div style="clear: both;"></div>
+	<div style="clear: both;margin-bottom: 3rem;"></div>
 
 
 <?php
@@ -53,8 +53,8 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 	);
 	?>
 
-
-	<ul class="nav">
+	<div id="okregi-spacer" class=""></div>
+	<ul id="okregi" class="nav">
 		<?php
 		$isFirst = true;
 
@@ -74,7 +74,7 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 			// 	$i++;
 			// 	echo '<label for="'.$child ->slug.'"><span>'.$child ->cat_name.'</span></label>';
 
-			echo '<li class="nav-item"><a class="page-scroll nav-link" href="#'.$child ->slug.'">'.$child ->cat_name.'</a></li>';
+			echo '<li class="nav-item"><a class="page-scroll-okregi nav-link" href="#'.$child ->slug.'">'.$child ->cat_name.'</a></li>';
 			$i++;
 		}
 		?>
