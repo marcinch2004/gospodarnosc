@@ -17,18 +17,18 @@
 })(jQuery);
 
 
-(function ($) {
-    var distance = $('#okregi').offset().top - 90;
+// (function ($) {
+//     var distance = $('#okregi').offset().top - 90;
 
-    $(window).scroll(function () {
+//     $(window).scroll(function () {
 
-        if ($(window).scrollTop() >= distance) {
-            $('#okregi').addClass("affix");
-            $('#okregi-spacer').addClass("show-okregi-spacer");
+//         if ($(window).scrollTop() >= distance) {
+//             $('#okregi').addClass("affix");
+//             $('#okregi-spacer').addClass("show-okregi-spacer");
 
-        } else {
-            $('#okregi').removeClass("affix");
-            $('#okregi-spacer').removeClass("show-okregi-spacer");
-        }
-    });
-})(jQuery);
+//         } else {
+//             $('#okregi').removeClass("affix");
+//             $('#okregi-spacer').removeClass("show-okregi-spacer");
+//         }
+//     });
+// })(jQuery);

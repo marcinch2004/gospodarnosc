@@ -54,7 +54,7 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 	?>
 
 	<div id="okregi-spacer" class=""></div>
-	<ul id="okregi" class="nav">
+	<ul id="okregi" class="nav d-flex justify-content-between">
 		<?php
 		$isFirst = true;
 
@@ -74,7 +74,7 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 			// 	$i++;
 			// 	echo '<label for="'.$child ->slug.'"><span>'.$child ->cat_name.'</span></label>';
 
-			echo '<li class="nav-item"><a class="page-scroll-okregi nav-link" href="#'.$child ->slug.'">'.$child ->cat_name.'</a></li>';
+			echo '<li class="nav-item"><a class="jump-to-page page-scroll-okregi nav-link" href="#'.$child ->slug.'">'.$child ->cat_name.'</a></li>';
 			$i++;
 		}
 		?>
@@ -118,8 +118,9 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 		}
 ?>
 
-
-<a class="btn btn-secondary" href="<?php echo esc_url( get_permalink(81) ); ?>">Zobacz nasz program</a>
+<div class="row col-md-12 justify-content-center">
+	<a class="jump-to-page" href="<?php echo esc_url( get_permalink(81) ); ?>">Zobacz nasz program</a>
+</div>
 
 
 <!-- <?php $the_query = new WP_Query( 'posts_per_page=5' );

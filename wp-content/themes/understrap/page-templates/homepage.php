@@ -17,7 +17,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
         <!-- display program posutlat posts -->
         <h1>Nasza wizja Rumi</h1>
-        <h5>Chcemy, żeby Rumia była mejscem gdzie się dobrze żyje.</h5>
+        <h5>Chcemy, żeby Rumia była mejscem gdzie się dobrze żyje</h5>
+        <span class="spacer"></span>
         <span class="spacer"></span>
 
         <div class="row">
@@ -41,6 +42,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                 ?>
         </div> 
     </div>
+        <div class="row col-md-12 justify-content-center">
+            <a href="#" class="jump-to-page">Zobacz cały program</a>
+        </div>
 </div>
 
 
