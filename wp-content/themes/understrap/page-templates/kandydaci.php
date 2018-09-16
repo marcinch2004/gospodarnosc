@@ -17,12 +17,12 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row  col-md-8 col-md-offset-2">
 
 			<!-- Do the left sidebar check -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
+
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -37,6 +37,8 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 <!-- <?php wp_list_categories( ); ?>	 -->
 
+					
+					<div style="clear: both;"></div>
 
 
 <?php
@@ -49,28 +51,38 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 	$child_categories=get_categories(
 		array( 'parent' => $cat_id )
 	);
+	?>
 
 
-	$isFirst = true;
+	<ul class="nav">
+		<?php
+		$isFirst = true;
 
-    $i=1;   
+		$i=1;   
 
+		foreach ( $child_categories as $child ) {
 
-	foreach ( $child_categories as $child ) {
+			// Here I'm showing as a list...
+			//first element on list is checked candidates
+			// if($i==1) {
+			// 	echo '<input id="'.$child ->slug.'" type="radio" name="tabs" checked="checked">';
+			// }
+			// else
+			// {
+			// 	echo '<input id="'.$child ->slug.'" type="radio" name="tabs" >';
+			// }
+			// 	$i++;
+			// 	echo '<label for="'.$child ->slug.'"><span>'.$child ->cat_name.'</span></label>';
 
-		// Here I'm showing as a list...
-		//first element on list is checked candidates
-		if($i==1) {
-			echo '<input id="'.$child ->slug.'" type="radio" name="tabs" checked="checked">';
-		}
-		else
-		{
-			echo '<input id="'.$child ->slug.'" type="radio" name="tabs" >';
-		}
+			echo '<li class="nav-item"><a class="page-scroll nav-link" href="#'.$child ->slug.'">'.$child ->cat_name.'</a></li>';
 			$i++;
-			echo '<label for="'.$child ->slug.'"><span>'.$child ->cat_name.'</span></label>';
-	}
+		}
+		?>
+	</ul>
 
+	<div class="d-flex flex-wrap">
+
+	<?php
 	while ($recent_posts_query->have_posts()) {
 		$recent_posts_query->the_post();
 		if(has_category())
@@ -80,25 +92,27 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 			}
 		?>
 
+		<!-- <div class="d-flex flex-row"> -->
+			<div id="<?php echo $category[0]->slug; ?>" class='post <?php echo $category[0]->slug; ?>  col-md-6'>
+				<!-- <p class="date"><?php the_date(); ?></p> -->
+				<!-- <a href="<?php echo site_url();?>/blog"> -->
 
-		<div class='post <?php echo $category[0]->slug; ?>'>
-			<!-- <p class="date"><?php the_date(); ?></p> -->
-			<!-- <a href="<?php echo site_url();?>/blog"> -->
+				<!-- <div><?php the_post_thumbnail('thumbnail') ?></div> -->
+
+				<small><b><?php echo $category[0]->name; ?></b></small>
 				<h3><?php the_title(); ?></h3>
+				<?php
+					// global $more;
+					// $more = 0;
+					// the_excerpt();
+					the_content();
+				?>
+			
+			</div>
+		<!-- </div> -->
 
-			<div><?php the_post_thumbnail('thumbnail') ?></div>
-			</a>
-
-		<?php
-			// global $more;
-			// $more = 0;
-			// the_excerpt();
-			the_content();
-		?>
-		
-		</div>
 		<!-- clearing WP fucking float -->
-		<div style="clear: both;"></div>
+		<!-- <div style="clear: both;"></div> -->
 		
 		<?php
 		}
@@ -126,9 +140,7 @@ wp_reset_postdata();
 				<?php endwhile; // end of the loop. ?>
 
 
-
-
-
+				</div><!-- flex row -->
 
 			</main><!-- #main -->
 
