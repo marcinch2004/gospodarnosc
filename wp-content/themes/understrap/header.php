@@ -93,9 +93,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 	
 		<figure>
 			<section>
-				<h1>Lubię Rumię</h1>
+				<h1>Lubię Rumię!</h1>
 			</section>
-			<a href="#full-width-page-wrapper" class="page-scroll">zobacz</a>
+
+			
+			<div class="d-flex justify-content-between">
+				<span class="link-to-fb"><a href="#">facebook</a></span>
+				<a href="#full-width-page-wrapper" class="page-scroll">
+					<svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" viewBox="0 0 40 25"><polyline points=" 3.5 4.8 20 21.3 36.5 4.8 " style="fill:none;stroke-linejoin:round;stroke-width:2;stroke:#FFF"/></svg>
+				</a>
+				<span>
+					<p>Działamy w Rumi od 1994 roku!</p>
+					<a href="#" target="_blank">popiera nas starosta wejherowski</a>
+				</span>
+			</div>
 		</figure>
 	
 	<?php else : ?>

@@ -1,6 +1,6 @@
-// $profile-color: #023f7b;
+$profile-color: #023f7b;
 // $profile-color: #01017a;
-$profile-color: #115497;
+// $profile-color: #115497;
 $profile-black: #212529;
 
 
@@ -12,11 +12,34 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+.btn-secondary {
+  color: $profile-color;
+  background-color: initial;
+  border-color: snow;
+  padding: 0;
+  text-decoration: underline;
+  &:hover {
+    color: $gray-900;
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+  }
+  &:focus {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+}
+
 h3 {
   margin-bottom: 1rem;
 }
 
 .home {
+  .navbar {
+    background-color: transparent !important;
+  }
   h5 {
   margin-bottom: 1rem;
   }
@@ -112,14 +135,10 @@ label {
   }
   .navbar {
     height: $header-height;
-    position: fixed;
     width: 100%;
     z-index: 10;
     top: 0;
-    background-color: #fff;
-    // background-color: #f8f9f9;
-    // box-shadow: 0 2px 4px 0 rgba(50,50,50,.06);
-    border-bottom: 1px solid #dddddd;
+    background-color: #94d3fe;;
     .nav-link {
       // color: $profile-color;
       color: $profile-black;
@@ -128,13 +147,13 @@ label {
       font-size: 0.8rem;
 
       &:hover {
-        color: $gray-500;
+        color: $profile-color;
       }
     }
   }
   .active {
     > .nav-link {
-      color: $gray-500;
+      color: $profile-color;
     }
   }
 
@@ -144,11 +163,11 @@ label {
     align-items: flex-end;
     justify-content: space-between;
     width: 100%;
-    height: calc(100vh - #{$header-height});
-    margin-top: $header-height;
+    height: 100vh;
+    margin-top: -$header-height;
     background-image:url("../uploads/2018/09/homepage-image.jpg");
     background-size: cover;
-    background-position:center center;
+    background-position:center bottom;
     background-repeat: no-repeat;
     margin-bottom: 0;
     > section {
@@ -156,7 +175,7 @@ label {
       width: 45vw;
       margin-top: 22%;
       h1 {
-        font-weight: 700;
+        font-weight: 600;
         font-size: 4rem;
         color: $profile-color;
       }
@@ -165,21 +184,39 @@ label {
         height: 4.5vw;
       }
     }
-    > a {
-      align-self: center;
-      color: white;
-      margin-bottom: 3rem;
-      border-bottom: 1px solid #9b9a9a;
-      padding: 0.5rem 0.3rem;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
+    div {
+      width: 100%;
+      padding: 0 10%;
+
+      > a {
+        align-self: center;
+        color: white;
+        margin-bottom: 3rem;
+        padding: 0.5rem 0.3rem;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+      }
+      span {
+        align-self: center;
+        flex-basis: 100px;
+        flex-basis: 16rem;
+        text-align: center;
+        color: #fff;
+        font-weight: 600;
+        p {
+          margin-bottom: 0;
+        }
+        a {
+          color: white;
+        }
+      }
     }
   }
 }
 
 #page-wrapper {
-  margin-top: $header-height;
+  // margin-top: $header-height;
 }
 
 /*homepage styles*/
@@ -264,29 +301,32 @@ label {
 
 /*pages*/
 
-#page-wrapper:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 7rem;
-  top: 55px;
-  background: #023f7b; /* Old browsers */
-  background: -moz-linear-gradient(top, #023f7b 0%, #0359ad 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #023f7b 0%,#0359ad 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #023f7b 0%,#0359ad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
+// #page-wrapper:after {
+//   content: "";
+//   position: absolute;
+//   width: 100%;
+//   height: 7rem;
+//   top: 70px;
+//   background: #023f7b; /* Old browsers */
+//   background: -moz-linear-gradient(top, #023f7b 0%, #0359ad 100%); /* FF3.6-15 */
+//   background: -webkit-linear-gradient(top, #023f7b 0%,#0359ad 100%); /* Chrome10-25,Safari5.1-6 */
+//   background: linear-gradient(to bottom, #023f7b 0%,#0359ad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+// }
 
 .entry-header {
   position: relative;
   z-index: 5;
   h1 {
-    color: white;
-    font-weight: 400;
+    // color: white;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
   }
 }
 
 .entry-content {
-  margin-top: 6rem;
+  // margin-top: 6rem;
 }
 
 .post { 

@@ -16,7 +16,9 @@ $container = get_theme_mod( 'understrap_container_type' );
     <div class="<?php echo esc_attr( $container ); ?>" id="content">
 
         <!-- display program posutlat posts -->
-        <h5>Nasza wizja Rumi</h5>
+        <h1>Nasza wizja Rumi</h1>
+        <h5>Chcemy, żeby Rumia była mejscem gdzie się dobrze żyje.</h5>
+        <span class="spacer"></span>
 
         <div class="row">
             <?php
@@ -31,7 +33,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <h3><?php the_title(); ?></h3>
                 <?php the_post_thumbnail('thumbnail') ?>
                 <?php the_excerpt(); ?>
-                <a class="btn btn-secondary understrap-read-more-link show page-scroll" href="program/#program-<?php echo $count ?>">czytaj więcej <?php echo $count ?></a>
+                <a class="btn btn-secondary understrap-read-more-link show page-scroll" href="program/#program-<?php echo $count ?>">czytaj więcej</a>
             </div>
 
             <?php
@@ -76,7 +78,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <small><?php the_date(); ?></small>
                     <?php the_post_thumbnail('large') ?>
                     <?php the_excerpt(); ?>
-                    <a class="btn btn-secondary understrap-read-more-link show page-scroll" href="news/#news-<?php echo $count ?>">czytaj więcej <?php echo $count ?></a>
+                    <a class="btn btn-secondary understrap-read-more-link show page-scroll" href="news/#news-<?php echo $count ?>">czytaj więcej</a>
                 </div>
             <?php
             }
@@ -84,7 +86,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     </div>
 
     <div class='col-md-4 porady'>
-        <h5>Porady</h5>
+        <!-- <h5>Porady</h5> -->
 
         <!-- querry porady -->
 
