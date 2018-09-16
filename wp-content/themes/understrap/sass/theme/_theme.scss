@@ -381,6 +381,13 @@ label {
       }
     }
   }
+  .people-category {
+    margin-top: 3rem;
+    border-bottom: 1px solid $profile-black;
+    h2 {
+      color: $profile-black;
+    }
+  }
   .post { 
     margin: 2rem 0;
     .wp-block-image {

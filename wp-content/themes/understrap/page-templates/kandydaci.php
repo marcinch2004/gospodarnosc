@@ -43,9 +43,9 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 <?php
 
-$recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'people'));
+	$recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'people'));
 
-//Get list of people subcategory names
+	//Get list of people subcategory names
 	$cat = get_category( get_query_var( 'cat' ) );
 	$cat_id = 4;
 	$child_categories=get_categories(
@@ -54,25 +54,13 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 	?>
 
 	<div id="okregi-spacer" class=""></div>
+	<!-- LIST OF OKREGI -->
 	<ul id="okregi" class="nav d-flex justify-content-between">
 		<?php
 		$isFirst = true;
-
 		$i=1;   
 
 		foreach ( $child_categories as $child ) {
-
-			// Here I'm showing as a list...
-			//first element on list is checked candidates
-			// if($i==1) {
-			// 	echo '<input id="'.$child ->slug.'" type="radio" name="tabs" checked="checked">';
-			// }
-			// else
-			// {
-			// 	echo '<input id="'.$child ->slug.'" type="radio" name="tabs" >';
-			// }
-			// 	$i++;
-			// 	echo '<label for="'.$child ->slug.'"><span>'.$child ->cat_name.'</span></label>';
 
 			echo '<li class="nav-item"><a class="jump-to-page page-scroll-okregi nav-link" href="#'.$child ->slug.'">'.$child ->cat_name.'</a></li>';
 			$i++;
@@ -80,66 +68,111 @@ $recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' 
 		?>
 	</ul>
 
-	<div class="d-flex flex-wrap">
-
-	<?php
-	while ($recent_posts_query->have_posts()) {
-		$recent_posts_query->the_post();
-		if(has_category())
-		$category = get_the_category();
-			{
-				$category[0]->cat_name;
-			}
-		?>
-
-		<!-- <div class="d-flex flex-row"> -->
-			<div id="<?php echo $category[0]->slug; ?>" class='post <?php echo $category[0]->slug; ?>  col-md-6'>
-				<!-- <p class="date"><?php the_date(); ?></p> -->
-				<!-- <a href="<?php echo site_url();?>/blog"> -->
-
-				<!-- <div><?php the_post_thumbnail('thumbnail') ?></div> -->
-
-				<small><b><?php echo $category[0]->name; ?></b></small>
-				<h3><?php the_title(); ?></h3>
-				<?php
-					// global $more;
-					// $more = 0;
-					// the_excerpt();
-					the_content();
-				?>
-			
-			</div>
-		<!-- </div> -->
-
-		<!-- clearing WP fucking float -->
-		<!-- <div style="clear: both;"></div> -->
-		
+	
+	<!-- <ul id="okregi" class="nav d-flex justify-content-between">
 		<?php
+		$isFirst = true;
+		$i=1;   
+
+		foreach ( $child_categories as $child ) {
+			?>
+
+			<span>wrap<?php echo $child->cat_name; ?>
+			
+				<div class="d-flex flex-wrap">
+					<?php
+						while ($recent_posts_query->have_posts()) {
+							$recent_posts_query->the_post();
+							if(has_category())
+							$category = get_the_category();
+								{
+									$category[0]->cat_name;
+								}
+							?>
+
+							<div id="<?php echo $category[0]->slug; ?>" class='post <?php echo $category[0]->slug; ?>  col-md-6'>
+								<small><b><?php echo $category[0]->name; ?></b></small>
+								<h3><?php the_title(); ?></h3>
+								<?php the_content(); ?>
+							</div>
+					<?php }	?>
+				</div>
+			
+			
+			</span>
+			
+			<?php
+			$i++;
 		}
+		?>
+	</ul> -->
+
+	<!-- show candidates -->
+	<!-- <div class="d-flex flex-wrap">
+		<?php
+			while ($recent_posts_query->have_posts()) {
+				$recent_posts_query->the_post();
+				if(has_category())
+				$category = get_the_category();
+					{
+						$category[0]->cat_name;
+					}
+				?>
+
+				<div id="<?php echo $category[0]->slug; ?>" class='post <?php echo $category[0]->slug; ?>  col-md-6'>
+					<small><b><?php echo $category[0]->name; ?></b></small>
+					<h3><?php the_title(); ?></h3>
+					<?php the_content(); ?>
+				</div>
+		<?php 
+		}	
+	?>
+	</div> -->
+
+
+
+<?php
+
+
+	for ($i=1;  $i < 5;) {
+	
+	?>
+		<div class="container-fluid people-category">
+			<h2>OKRĘG <?php echo $i ?></h2>
+		</div>
+		<div class="d-flex flex-wrap">
+			<?php
+				$recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'okreg-'.$i.''));
+				while ($recent_posts_query->have_posts()) {
+					$recent_posts_query->the_post();
+					if(has_category())
+					$category = get_the_category();
+						{
+							$category[0]->cat_name;
+						}
+					?>
+
+					<div id="<?php echo $category[0]->slug; ?>" class='post <?php echo $category[0]->slug; ?>  col-md-6'>
+						<!-- <small><b><?php echo $category[0]->name; ?></b></small> -->
+						<h3><?php the_title(); ?></h3>
+						<?php the_content(); ?>
+					</div>
+				<?php 
+				}
+			?>
+				
+		</span> <?php
+			$i++;
+		 }
 ?>
 
-<div class="row col-md-12 justify-content-center">
-	<a class="jump-to-page" href="<?php echo esc_url( get_permalink(81) ); ?>">Zobacz nasz program</a>
-</div>
-
-
-<!-- <?php $the_query = new WP_Query( 'posts_per_page=5' );
- 	while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-	<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-
-<?php the_excerpt(__('(more…)'));
- 
-
-endwhile;
-wp_reset_postdata();
-?> -->
 
 
 
 
 
-				<?php endwhile; // end of the loop. ?>
 
+					<?php endwhile; // TEMPLATE WHILE end of the loop. ?>
 
 				</div><!-- flex row -->
 
