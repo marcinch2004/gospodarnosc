@@ -87,6 +87,11 @@ $container = get_theme_mod( 'understrap_container_type' );
             <?php
             }
         ?>
+
+        <div class="row justify-content-center">
+            <a href="news" class="jump-to-page">Zobacz więcej wiadomości</a>
+        </div>
+
     </div>
 
     <div class='col-md-4 porady'>
