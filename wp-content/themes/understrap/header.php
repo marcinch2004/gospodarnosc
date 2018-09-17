@@ -93,20 +93,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 	
 		<figure>
 			<section>
-				<h1>Lubię Rumię!</h1>
+				<!-- <h1>Lubię Rumię!</h1> -->
 			</section>
 
 			
 			<div class="d-flex justify-content-between">
 				<span class="link-to-fb"><a href="#">
-				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="52" viewBox="0 0 50 52"><path d="M46 1.6H4c-2.2 0-4 1.8-4 4v41.9c0 2.2 1.8 4 4 4H46c2.2 0 4-1.8 4-4V5.6C50 3.4 48.2 1.6 46 1.6z" fill="#3F3F3F"/><path d="M46 0H4C1.8 0 0 1.8 0 4v41.9c0 2.2 1.8 4 4 4H46c2.2 0 4-1.8 4-4V4C50 1.8 48.2 0 46 0z" fill="#023f7b"/><path d="M29.5 18.9h2.7v-4.4h-3.7c-5.3 0-5.1 4.2-5.1 4.9 0 0.6 0 3.5 0 3.5H21v4.2h2.4v11.6h5V27.1h3.4c0 0 0.3-2 0.5-4.3 -0.4 0-3.8 0-3.8 0s0-2.5 0-2.9C28.4 19.5 29 18.9 29.5 18.9z" fill="#48639C"/><path d="M27.9 17.3h2.7v-4.4h-3.7c-5.3 0-5.1 4.2-5.1 4.9 0 0.6 0 3.5 0 3.5h-2.4v4.2h2.4v11.6h5V25.4h3.4c0 0 0.3-2 0.5-4.3 -0.4 0-3.8 0-3.8 0s0-2.5 0-2.9C26.8 17.9 27.4 17.3 27.9 17.3z" fill="#FFF"/></svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect x="7" y="2.3" width="15" height="21.7" fill="#FFF"/><path d="M22.7 0H1.3C0.6 0 0 0.6 0 1.3v21.4C0 23.4 0.6 24 1.3 24h11.5v-9.3H9.7v-3.6h3.1V8.4c0-3.1 1.9-4.8 4.7-4.8 1.3 0 2.5 0.1 2.8 0.1V7l-1.9 0c-1.5 0-1.8 0.7-1.8 1.8v2.3h3.6l-0.5 3.6h-3.1V24h6.1c0.7 0 1.3-0.6 1.3-1.3V1.3C24 0.6 23.4 0 22.7 0z" fill="#3B5998"/></svg>
 				</a></span>
 				<a href="#full-width-page-wrapper" class="page-scroll">
 					<svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" viewBox="0 0 40 25"><polyline points=" 3.5 4.8 20 21.3 36.5 4.8 " style="fill:none;stroke-linejoin:round;stroke-width:2;stroke:#FFF"/></svg>
 				</a>
 				<span>
-					<p>Działamy w Rumi od 1994 roku!</p>
-					<a href="#" target="_blank">popiera nas starosta wejherowski</a>
+					<p>
+					<!-- Działamy w Rumi od 1994 roku! -->
+					</p>
+					<!-- <a href="#" target="_blank">popiera nas starosta wejherowski</a> -->
 				</span>
 			</div>
 		</figure>
