@@ -129,17 +129,17 @@ $container   = get_theme_mod( 'understrap_container_type' );
 	?>
 	</div> -->
 
-
-
 <?php
 
 
 	for ($i=1;  $i < 5;) {
 	
 	?>
-		<div class="container-fluid people-category">
+		<div class="container-fluid people-category d-flex flex-row flex-wrap align-items-baseline">
 			<h2>OKRĘG <?php echo $i ?></h2>
+			<a href="../wp-content/themes/understrap/uploads/2018/09/<?php echo $i ?>.png" data-featherlight="image">zobacz mapkę i listę ulic</a>
 		</div>
+
 		<div class="d-flex flex-wrap">
 			<?php
 				$recent_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' => 'okreg-'.$i.''));
