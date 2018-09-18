@@ -319,6 +319,7 @@ label {
   }
   .show.understrap-read-more-link {
     display: inline-block;
+    border: none;
   }
 }
 
@@ -367,6 +368,14 @@ label {
 //   color: #212529;
 //   margin-bottom: auto;
 // }
+
+.fb {
+  a.external_icon {
+    background: url("../uploads/2018/09/fb_icon.png") center right no-repeat;
+    padding-right: 33px;
+    background-size: contain;
+  }
+}
 
 .wp-block-image.col-md-6 {
   padding-left: 0;

@@ -98,7 +98,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			
 			<div class="d-flex justify-content-between">
-				<span class="link-to-fb"><a href="#">
+				<span class="link-to-fb"><a href="https://www.facebook.com/GospodarnoscRumia/" target="_blank">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect x="7" y="2.3" width="15" height="21.7" fill="#FFF"/><path d="M22.7 0H1.3C0.6 0 0 0.6 0 1.3v21.4C0 23.4 0.6 24 1.3 24h11.5v-9.3H9.7v-3.6h3.1V8.4c0-3.1 1.9-4.8 4.7-4.8 1.3 0 2.5 0.1 2.8 0.1V7l-1.9 0c-1.5 0-1.8 0.7-1.8 1.8v2.3h3.6l-0.5 3.6h-3.1V24h6.1c0.7 0 1.3-0.6 1.3-1.3V1.3C24 0.6 23.4 0 22.7 0z" fill="#3B5998"/></svg>
 				</a></span>
 				<a href="#full-width-page-wrapper" class="page-scroll">
