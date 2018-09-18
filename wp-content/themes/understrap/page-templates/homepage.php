@@ -17,7 +17,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
         <!-- display program posutlat posts -->
         <h1>Nasza wizja Rumi</h1>
-        <h5>Chcemy, żeby Rumia była mejscem gdzie się dobrze żyje</h5>
+        <h5>Chcemy, żeby Rumia była miejscem, gdzie dobrze się żyje.</h5>
         <span class="spacer"></span>
         <span class="spacer"></span>
 

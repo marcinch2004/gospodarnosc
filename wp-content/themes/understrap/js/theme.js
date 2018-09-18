@@ -3997,17 +3997,25 @@
 
 
 // (function ($) {
-//     var distance = $('#okregi').offset().top - 90;
+//     var distance = $('#page').offset().top - 300;
 
 //     $(window).scroll(function () {
 
 //         if ($(window).scrollTop() >= distance) {
-//             $('#okregi').addClass("affix");
-//             $('#okregi-spacer').addClass("show-okregi-spacer");
-
+//             $('#gototop').addClass("affix");
 //         } else {
-//             $('#okregi').removeClass("affix");
-//             $('#okregi-spacer').removeClass("show-okregi-spacer");
+//             $('#gototop').removeClass("affix");
 //         }
 //     });
 // })(jQuery);
+
+(function ($) {
+    $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        if (y > 800) {
+            $('.go-to-page-top').fadeIn();
+        } else {
+            $('.go-to-page-top').fadeOut();
+        }
+    });
+})(jQuery);

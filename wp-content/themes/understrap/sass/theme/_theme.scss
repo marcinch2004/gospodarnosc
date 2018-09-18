@@ -64,7 +64,10 @@ ul li {
     border-bottom: none !important;
   }
   h5 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
+  }
+  h1+h5 {
+    text-transform: none;
   }
 }
 
@@ -134,6 +137,15 @@ label {
 
 
 /* header */
+
+    /*fix for mobile menu homepage*/
+  .home {
+    .navbar-collapse.collapse.show {
+      padding-bottom: $header-height;
+    }
+  }
+
+
 #wrapper-navbar {
   .navbar-brand {
     color: $primary;
@@ -143,7 +155,7 @@ label {
       }
   }
   .navbar {
-    height: $header-height;
+    // height: $header-height;
     width: 100%;
     z-index: 10;
     top: 0;
@@ -155,10 +167,13 @@ label {
       font-weight: 700;
       text-transform: uppercase;
       font-size: 0.8rem;
-
       &:hover {
         color: $profile-black;
       }
+    }
+    .navbar-toggler {
+      color: $profile-color;
+      border: 1px solid $profile-color;
     }
   }
   .active {
@@ -180,6 +195,9 @@ label {
     background-position:center bottom;
     background-repeat: no-repeat;
     margin-bottom: 0;
+    @media (max-width: 576px) { 
+      background-image:url("../uploads/2018/09/mobile-homepage-image.jpg");
+     }
     > section {
       margin-right: 6vw;
       width: 45vw;
@@ -435,6 +453,40 @@ label {
     }
     a {
       text-decoration: underline;
+    }
+  }
+}
+
+
+/*footer*/
+
+.site-info {
+  border-top: 1px solid $profile-color;
+  padding-top: 0.5rem;
+  .go-to-page-top {
+    position: fixed;
+    background: #023f7bcf;
+    color: white;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    bottom: 2rem;
+    right: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.2;
+    display: none;
+    -webkit-box-align: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all .25s ease-in-out;
+    &:hover {
+      transform: translate(0,-5px);
+    }
+    span {
+      position: relative;
+      top: 32%;
     }
   }
 }

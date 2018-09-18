@@ -63,8 +63,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						the_custom_logo();
 					} ?><!-- end custom logo -->
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">menu
+					<!-- <span class="navbar-toggler-icon"></span> original template solution-->
 				</button>
 
 
@@ -91,11 +91,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<!-- homepage image -->
 	<?php if ( is_front_page() ) : ?>
 	
-		<figure>
-			<section>
-				<!-- <h1>Lubię Rumię!</h1> -->
-			</section>
 
+	<!-- version for desktop -->
+		<figure>
+			<section><!-- <h1>Lubię Rumię!</h1> --></section>
 			
 			<div class="d-flex justify-content-between">
 				<span class="link-to-fb"><a href="https://www.facebook.com/GospodarnoscRumia/" target="_blank">
@@ -105,13 +104,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" viewBox="0 0 40 25"><polyline points=" 3.5 4.8 20 21.3 36.5 4.8 " style="fill:none;stroke-linejoin:round;stroke-width:2;stroke:#FFF"/></svg>
 				</a>
 				<span>
-					<p>
-					<!-- Działamy w Rumi od 1994 roku! -->
-					</p>
+					<!-- <p>Działamy w Rumi od 1994 roku!</p> -->
 					<!-- <a href="#" target="_blank">popiera nas starosta wejherowski</a> -->
 				</span>
 			</div>
 		</figure>
+
 	
 	<?php else : ?>
 	

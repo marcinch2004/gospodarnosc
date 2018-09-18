@@ -155,6 +155,12 @@ $container   = get_theme_mod( 'understrap_container_type' );
 					<div id="<?php echo $category[0]->slug; ?>" class='post <?php echo $category[0]->slug; ?>  col-md-6'>
 						<!-- <small><b><?php echo $category[0]->name; ?></b></small> -->
 						<h3><?php the_title(); ?></h3>
+
+						<!-- <?php 
+						if ( wp_is_mobile ) : the_post_thumbnail( 'full' );
+						else : the_post_thumbnail( 'medium' );
+						endif;
+						?> -->
 						<?php the_content(); ?>
 					</div>
 				<?php 
