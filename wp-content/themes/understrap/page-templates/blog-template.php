@@ -47,6 +47,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 				<span id="news-<?php echo $count ?>" class="spacer"></span>
 				<div class="col-md-8 col-md-offset-2 news post">
 					<h3><?php the_title(); ?></h3>
+					<?php the_date(); ?> 
 					<?php the_content(); ?>
 
 				</div>

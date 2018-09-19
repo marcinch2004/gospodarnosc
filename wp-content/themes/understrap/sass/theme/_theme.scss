@@ -12,6 +12,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+/*fixes*/
+ul {
+  padding-inline-start: 0.5rem;
+}
+
+
 .btn-secondary {
   color: $profile-color;
   background-color: initial;
@@ -233,11 +239,13 @@ label {
       }
       span {
         align-self: center;
-        flex-basis: 100px;
         flex-basis: 16rem;
         text-align: center;
         color: #fff;
         font-weight: 600;
+        @media (max-width: 768px) {
+          flex-basis: 100px;
+        }
         p {
           margin-bottom: 0;
         }
@@ -281,7 +289,7 @@ label {
       padding: 0.7rem 1.5rem 1.5rem;
       transition: all 0.25s ease-in-out;
       background: #ffffff;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       // border-top: 4px solid #023f7b;
       &:hover {
         transform: translate(0, -5px);
@@ -380,6 +388,14 @@ label {
 //   color: #212529;
 //   margin-bottom: auto;
 // }
+
+.mobile-fix {
+  figure {
+    @media (max-width: 768px) {
+      float: none !important;
+    }
+  }
+}
 
 .fb {
   a.external_icon {
