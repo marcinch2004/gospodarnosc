@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     $recent_posts_query->the_post();
             ?>
 
-            <div class='col-md-4 <?php echo $category[0]->slug; ?>'>
+            <div class='col-md-4 news__container<?php echo $category[0]->slug; ?>'>
                 <h3><?php the_title(); ?></h3>
                 <?php the_post_video() ?>
                 <?php the_excerpt(); ?>
