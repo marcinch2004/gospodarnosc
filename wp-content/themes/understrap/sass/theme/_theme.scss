@@ -69,6 +69,11 @@ ul li {
   h1+h5 {
     text-transform: none;
   }
+  .featured-video-plus {
+    iframe {
+      width: 100%;
+    }
+  }
 }
 
 h5 {

@@ -32,7 +32,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
             <div class='col-md-4 <?php echo $category[0]->slug; ?>'>
                 <h3><?php the_title(); ?></h3>
-                <?php the_post_thumbnail('thumbnail') ?>
+                <?php the_post_video() ?>
                 <?php the_excerpt(); ?>
                 <a class="btn btn-secondary understrap-read-more-link show page-scroll" href="program/#program-<?php echo $count ?>">czytaj więcej</a>
             </div>
