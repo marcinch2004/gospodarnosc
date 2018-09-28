@@ -52,7 +52,7 @@ $news_posts_query = new WP_Query(array('post_type' => 'post', 'category_name' =>
 
 		<!-- <span id="program-<?php echo $count ?>" class="spacer"></span> -->
 		<!-- <div class='post <?php echo $category[0]->slug; ?> col-md-8 col-md-offset-2'> -->
-		<div class='post <?php echo $category[0]->slug; ?>'>
+		<div id="program-<?php echo $count ?>" class='post <?php echo $category[0]->slug; ?>'>
 
 				<h3><?php the_title(); ?></h3>
 				<div><?php the_post_thumbnail('thumbnail') ?></div>
